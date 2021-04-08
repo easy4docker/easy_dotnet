@@ -34,7 +34,7 @@ footer {
 }
 
 .head-card {
-    min-height: 8rem;
+    min-height: 10rem;
 }
 .head-menu-1 {
     height: 6rem;
@@ -72,4 +72,8 @@ footer {
    1px -1px 0 #000,
    -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+
+.body-section {
+    min-height: 36rem;
 }
