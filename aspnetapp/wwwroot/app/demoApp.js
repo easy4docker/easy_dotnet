@@ -9,9 +9,10 @@ app.directive('appHeader', function() {
 app.directive('appBody', function() {
   return {
     templateUrl: '/app/templates/body/bodyRoot.html?' + new Date().getTime(),
-    controller: function AppBodyController() {
-      this.switchModule = function() {
-        alert('switchModule')
+    controller: function AppBodyController($scope, $http) {
+      this.switchModule = function(v) {
+        alert(v)
+        alert(v)
       };
     },
     replace: true
@@ -34,7 +35,7 @@ app.directive('appBody', function() {
   };
 })
 app.controller('loadData', function($scope, $http) {
-
+  $scope.bodyModule = 'api';
   $http.get("api/getContent")
   .then(function(response) {
     $scope.data = response.data;
@@ -44,6 +45,6 @@ app.controller('loadData', function($scope, $http) {
 app.controller('appBody', function($scope, $http) {
   $scope.bodyModule = 'api';
   $scope.switchModule = function(v) {
-    $scope.bodyModule=v;
+    $scope.bodyModule = v;
   };
 });
