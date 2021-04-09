@@ -7,7 +7,17 @@ angular.module('demoApp', [])
   };
 }).directive('appBody', function() {
   return {
-    templateUrl: '/app/templates/body.html?' + new Date().getTime(),
+    templateUrl: '/app/templates/body/bodyRoot.html',
+    replace: true
+  };
+}).directive('appBodyApi', function() {
+  return {
+    templateUrl: '/app/templates/body/bodyApi.html',
+    replace: true
+  };
+}).directive('appBodyDocument', function() {
+  return {
+    templateUrl: '/app/templates/body/bodyDocument.html',
     replace: true
   };
 }).controller('loadData', function($scope, $http) {
