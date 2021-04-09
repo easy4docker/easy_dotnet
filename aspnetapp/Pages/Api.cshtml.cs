@@ -45,7 +45,7 @@ namespace aspnetapp.Pages
 
             
             HttpWebRequest myReq =
-            (HttpWebRequest)WebRequest.Create("https://harvest-thermal.com/about");
+            (HttpWebRequest)WebRequest.Create("http://harvest-thermal.com/about");
             WebResponse response = myReq.GetResponse();
            // WeatherForecast w = new WeatherForecast() { Date = DateTime.Now, TemperatureC = 30, Summary = "Hot" };
            Stream dataStream = response.GetResponseStream();
