@@ -10,14 +10,14 @@ app.directive('appBody', function() {
   return {
     templateUrl: '/app/templates/body/bodyRoot.html?' + new Date().getTime(),
     controller: function AppBodyController($scope, $http) {
-      this.switchModule = function(v) {
-        alert(v)
-        alert(v)
+      $scope.switchModule = function(v) {
+        $scope.bodyModule = v;
       };
     },
     replace: true
   };
-}).directive('appBodyApi', function() {
+})
+app.directive('appBodyApi', function() {
   return {
     templateUrl: '/app/templates/body/bodyApi.html?' + new Date().getTime(),
     controller: function AppBodyApiController($scope, $http) {
@@ -28,7 +28,8 @@ app.directive('appBody', function() {
     },
     replace: true
   };
-}).directive('appBodyDocument', function() {
+})
+app.directive('appBodyDocument', function() {
   return {
     templateUrl: '/app/templates/body/bodyDocument.html?' + new Date().getTime(),
     replace: true
@@ -40,11 +41,4 @@ app.controller('loadData', function($scope, $http) {
   .then(function(response) {
     $scope.data = response.data;
   });
-});
-
-app.controller('appBody', function($scope, $http) {
-  $scope.bodyModule = 'api';
-  $scope.switchModule = function(v) {
-    $scope.bodyModule = v;
-  };
 });
