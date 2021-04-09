@@ -10,3 +10,5 @@ docker stop app-easy-aspnet
 docker run --rm -d -p 8000:80  -v "$(pwd)/aspnetapp/wwwroot":/app/wwwroot --name app-easy-aspnet aspnetapp
 
 -Cloud integration
+
+Submit https://github.com/easy4docker/easy_dotnet.git on EasyDocker Admin
