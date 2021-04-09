@@ -27,25 +27,25 @@ namespace aspnetapp.Pages
 
     public class ApiModel : PageModel
     {
-
-        public string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
-
         WeatherForecast w = new WeatherForecast() { Date = DateTime.Now, TemperatureC = 30, Summary = "Hot" };
 
+        public string baseDir = System.Environment.CurrentDirectory + "/wwwroot/app/demoApp.js";
+        // System.AppDomain.CurrentDomain.BaseDirectory;
         public string jsonString = null;
+        public string jsCode = null;
       //  public string outstring = JsonSerializer.Serialize(cars);
         private readonly ILogger<PrivacyModel> _logger;
 
         public ApiModel(ILogger<PrivacyModel> logger)
         {
             _logger = logger;
-            
         }
 
         public void OnGet()
         {
+            jsCode = System.IO.File.ReadAllText(baseDir);
+
             HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://google.com");
-           // (HttpWebRequest)WebRequest.Create("http://harvest-thermal.com/about");
             WebResponse response = myReq.GetResponse();
            // WeatherForecast w = new WeatherForecast() { Date = DateTime.Now, TemperatureC = 30, Summary = "Hot" };
            Stream dataStream = response.GetResponseStream();

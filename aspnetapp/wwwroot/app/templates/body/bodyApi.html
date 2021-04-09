@@ -54,32 +54,11 @@ namespace aspnetapp.Pages {
       }
 }
 </pre>
-                                  </div>
-                              </div>
-                              <b>AngularJs code</b>
-                              <div class="pl-3 pt-1 pb-0 bg-dark text-success overflow-auto"  style="height:8rem">
-                                  <div class="pl-3 ml-3 mb-0">
-<pre class="text-success pb-0 mb-0">
-angular.module('demoApp', [])
-.directive('appHeader', function() {
-      return {
-      templateUrl: "/app/templates/header.html",
-      replace: true
-      };
-}).directive('appBody', function() {
-      return {
-      templateUrl: '/app/templates/body.html?' + new Date().getTime(),
-      replace: true
-      };
-}).controller('loadData', function($scope, $http) {
-      $scope, $http
-      $http.get("/api")
-      .then(function(response) {
-      $scope.data = response.data;
-      });
-});
-</pre>
                         </div>
+                  </div>
+                  <b>AngularJs code</b>
+                  <div class="pl-3 pt-1 pb-0 bg-dark text-success overflow-auto"  style="height:8rem">
+                        <div class="pl-3 ml-3 mb-0"><pre class="text-success pb-0 mb-0">{{angularCode}}</pre></div>
                   </div>
             </div>
             <div class="p-3 mt-2 mr-1 alert-secondary border rounded">

@@ -19,6 +19,12 @@ app.directive('appBody', function() {
 }).directive('appBodyApi', function() {
   return {
     templateUrl: '/app/templates/body/bodyApi.html?' + new Date().getTime(),
+    controller: function AppBodyApiController($scope, $http) {
+      $http.get("api/angularCode")
+      .then(function(response) {
+        $scope.angularCode = response.data;
+      });
+    },
     replace: true
   };
 }).directive('appBodyDocument', function() {
@@ -29,7 +35,7 @@ app.directive('appBody', function() {
 })
 app.controller('loadData', function($scope, $http) {
 
-  $http.get("/api")
+  $http.get("api/getContent")
   .then(function(response) {
     $scope.data = response.data;
   });
