@@ -11,4 +11,4 @@ This is web app project for C# ASP .net running on EasyDocker, a docker solution
 
 ## Cloud integration
 
-Submit https://github.com/easy4docker/easy_dotnet.git on EasyDocker Admin
+Submit the url https://github.com/easy4docker/easy_dotnet.git on EasyDocker Admin
