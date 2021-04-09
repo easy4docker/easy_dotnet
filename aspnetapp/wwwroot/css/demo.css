@@ -82,3 +82,7 @@ footer {
 .menu-section {
     min-height: 16rem;
 }
+
+.cursor-pointer {
+    cursor:pointer;
+}
