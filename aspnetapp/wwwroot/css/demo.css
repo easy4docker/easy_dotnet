@@ -78,3 +78,7 @@ footer {
 .body-section {
     min-height: 36rem;
 }
+
+.menu-section {
+    min-height: 16rem;
+}
