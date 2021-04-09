@@ -7,15 +7,14 @@ angular.module('demoApp', [])
   };
 }).directive('appBody', function() {
   return {
-    templateUrl: "/app/templates/body.html",
+    templateUrl: '/app/templates/body.html?' + new Date().getTime(),
     replace: true
   };
 }).controller('loadData', function($scope, $http) {
   $scope, $http
-  $http.get("/app.html")
+  $http.get("/api")
   .then(function(response) {
-    console.log(response)
-  //  $scope.myWelcome = response.data;
+    $scope.data = response.data;
   });
   /*
   $scope.beers = [0, 1, 2, 3, 4, 5, 6];
