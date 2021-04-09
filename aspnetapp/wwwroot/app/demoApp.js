@@ -25,6 +25,10 @@ app.directive('appBodyApi', function() {
       .then(function(response) {
         $scope.angularCode = response.data;
       });
+      $http.get("api/csCode")
+      .then(function(response) {
+        $scope.csCode = response.data;
+      });
     },
     replace: true
   };

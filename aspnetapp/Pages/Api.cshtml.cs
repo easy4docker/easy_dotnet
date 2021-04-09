@@ -29,10 +29,11 @@ namespace aspnetapp.Pages
     {
         WeatherForecast w = new WeatherForecast() { Date = DateTime.Now, TemperatureC = 30, Summary = "Hot" };
 
-        public string baseDir = System.Environment.CurrentDirectory + "/wwwroot/app/demoApp.js";
+        public string baseDir = System.Environment.CurrentDirectory;
         // System.AppDomain.CurrentDomain.BaseDirectory;
         public string jsonString = null;
         public string jsCode = null;
+        public string csCode = null;
       //  public string outstring = JsonSerializer.Serialize(cars);
         private readonly ILogger<PrivacyModel> _logger;
 
@@ -43,8 +44,8 @@ namespace aspnetapp.Pages
 
         public void OnGet()
         {
-            jsCode = System.IO.File.ReadAllText(baseDir);
-
+            csCode = System.IO.File.ReadAllText(baseDir + "/wwwroot/sampleCode");
+            jsCode = System.IO.File.ReadAllText(baseDir + "/wwwroot/app/demoApp.js");
             HttpWebRequest myReq = (HttpWebRequest)WebRequest.Create("http://google.com");
             WebResponse response = myReq.GetResponse();
            // WeatherForecast w = new WeatherForecast() { Date = DateTime.Now, TemperatureC = 30, Summary = "Hot" };
@@ -52,8 +53,6 @@ namespace aspnetapp.Pages
             StreamReader reader = new StreamReader(dataStream);
             jsonString = reader.ReadToEnd();
             reader.Close();
-          // jsonString = JsonSerializer.Serialize(w);
-            // cars = {"Volvo", "BMW", "Ford", "Mazda"}
         }
     }
 }
