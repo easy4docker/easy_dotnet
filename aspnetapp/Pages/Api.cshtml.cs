@@ -13,6 +13,8 @@ using System.Text.Json.Serialization;
 // using System.Text.Unicode;
 using System.Net;
 using System.IO;
+using System.Net.Security;
+using System.Security.Cryptography;
 
 namespace aspnetapp.Pages
 {
@@ -42,10 +44,8 @@ namespace aspnetapp.Pages
 
         public void OnGet()
         {
-
-            
             HttpWebRequest myReq =
-            (HttpWebRequest)WebRequest.Create("http://harvest-thermal.com/about");
+            (HttpWebRequest)WebRequest.Create("https://harvest-thermal.com/about");
             WebResponse response = myReq.GetResponse();
            // WeatherForecast w = new WeatherForecast() { Date = DateTime.Now, TemperatureC = 30, Summary = "Hot" };
            Stream dataStream = response.GetResponseStream();
